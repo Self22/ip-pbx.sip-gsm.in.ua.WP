@@ -95,47 +95,111 @@
         <div class="func__background"></div>
         <div class="func__container2">
             <ul class="table_tabs-mob1">
-                <li class="func__item func__item-active" role="presentation"><a class="func__linc" href="#voice" aria-controls="voice" role="tab" data-toggle="tab">  Голосовое меню</a></li>
-                <li class="func__item" role="presentation"><a class="func__linc" href="#stat" aria-controls="stat" role="tab" data-toggle="tab">  Статистика и запись</a></li>
-                <li class="func__item" role="presentation"><a class="func__linc" href="#callback" aria-controls="callback" role="tab" data-toggle="tab">  Сall-back</a></li>
-                <li class="func__item" role="presentation"><a class="func__linc" href="#incom" aria-controls="incom" role="tab" data-toggle="tab">  Переадресация входящих</a></li>
-                <li class="func__item" role="presentation"><a class="func__linc" href="#queue" aria-controls="queue" role="tab" data-toggle="tab">  Организация очередей</a></li>
-                <li class="func__item" role="presentation"><a class="func__linc" href="#return" aria-controls="return" role="tab" data-toggle="tab">  Обратный звонок</a></li>
-                <li class="func__item" role="presentation"><a class="func__linc" href="#fax" aria-controls="fax" role="tab" data-toggle="tab">  Факс &#8594; E-mail</a></li>
-                <li class="func__item" role="presentation"><a class="func__linc func__linc" href="#crm" aria-controls="crm" role="tab" data-toggle="tab">  Интеграция с CRM</a></li>
+                <li class="func__item func__item-active" role="presentation"><a class="func__linc" href="#voice"
+                                                                                aria-controls="voice" role="tab"
+                                                                                data-toggle="tab"><?php echo get_the_title($post = 8) ?></a>
+                </li>
+                <li class="func__item" role="presentation"><a class="func__linc" href="#stat" aria-controls="stat"
+                                                              role="tab"
+                                                              data-toggle="tab"><?php echo get_the_title($post = 10) ?></a>
+                </li>
+                <li class="func__item" role="presentation"><a class="func__linc" href="#callback"
+                                                              aria-controls="callback" role="tab"
+                                                              data-toggle="tab"><?php echo get_the_title($post = 12) ?></a>
+                </li>
+                <li class="func__item" role="presentation"><a class="func__linc" href="#incom" aria-controls="incom"
+                                                              role="tab"
+                                                              data-toggle="tab"><?php echo get_the_title($post = 14) ?></a>
+                </li>
+                <li class="func__item" role="presentation"><a class="func__linc" href="#queue" aria-controls="queue"
+                                                              role="tab"
+                                                              data-toggle="tab"><?php echo get_the_title($post = 16) ?></a>
+                </li>
+                <li class="func__item" role="presentation"><a class="func__linc" href="#return" aria-controls="return"
+                                                              role="tab"
+                                                              data-toggle="tab"><?php echo get_the_title($post = 23) ?></a>
+                </li>
+                <li class="func__item" role="presentation"><a class="func__linc" href="#fax" aria-controls="fax"
+                                                              role="tab"
+                                                              data-toggle="tab"><?php echo get_the_title($post = 19) ?></a>
+                </li>
+                <li class="func__item" role="presentation"><a class="func__linc func__linc" href="#crm"
+                                                              aria-controls="crm" role="tab"
+                                                              data-toggle="tab"><?php echo get_the_title($post = 21) ?></a>
+                </li>
             </ul>
             <div class="tab-content tab-content1">
                 <div class="tab-pane func__descr fade in active" role="tabpanel" id="voice">
-                    <h3 class="func__descr-title">   Голосовое меню</h3>
-                    <p>  При звонке в колл-центр Ваш клиент будет перенаправлен на голосовое меню, в котором он услышит дополнительную информацию. Гармонично подобранное музыкальное сопровождение, голос диктора и продуманный текст создаст благоприятное впечатление от звонка в организацию. Маршрутизация, выполняемая с помощью IVR-системы, обеспечивает правильную загрузку операторов продуктов и услуг компании.</p>
+                    <h3 class="func__descr-title"><?php echo get_the_title($post = 8) ?></h3>
+
+                    <p>  <?php if (have_posts()) : query_posts('p=8');
+                            while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
+                            <? endwhile; endif;
+                        wp_reset_query(); ?></p>
                 </div>
                 <div class="tab-pane fade func__descr" role="tabpanel" id="stat">
-                    <h3 class="func__descr-title">   Статистика и запись</h3>
-                    <p>  Статистика всех входящих и исходящих звонков (журнал звонков) с возможностью прослушать запись разговоров или просмотреть непринятые звонки. Эффективность телефонных звонков - главное, вокруг чего строится наш сервис. Удобная история и статистика позволяют контроливать ваши телефонные продажи, пропущенные звонки и отслеживать разговоры с новыми клиентами.</p>
+                    <h3 class="func__descr-title"><?php echo get_the_title($post = 10) ?></h3>
+
+                    <p><?php if (have_posts()) : query_posts('p=10');
+                            while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
+                            <? endwhile; endif;
+                        wp_reset_query(); ?></p>
                 </div>
                 <div class="tab-pane fade func__descr" role="tabpanel" id="callback">
-                    <h3 class="func__descr-title">   Сall-back</h3>
-                    <p>  В случае невозможности ответить на входящий звонок, звонящему будет предложено нажать цифру 1 и положить трубку. После этого к вам на электронную почту прийдет письмо с номером звонившего абонента. Правда, удобно?</p>
+                    <h3 class="func__descr-title"><?php echo get_the_title($post = 12) ?></h3>
+
+                    <p><?php if (have_posts()) : query_posts('p=12');
+                            while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
+                            <? endwhile; endif;
+                        wp_reset_query(); ?></p>
                 </div>
                 <div class="tab-pane fade func__descr" role="tabpanel" id="incom">
-                    <h3 class="func__descr-title">   Переадресация входящих</h3>
-                    <p>  Если номер, на который Вам позвонили, занят, не отвечает или отключен, то вызов можно переадресовать на другой стационарный или мобильный телефон. Эта функция часто используется как резервный канал при неполадках в связи. Для использовани ятребуется подключение внешнего SIP-транка оператора фиксированной телефонной связи.</p>
+                    <h3 class="func__descr-title"><?php echo get_the_title($post = 14) ?></h3>
+
+                    <p><?php if (have_posts()) : query_posts('p=14');
+                            while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
+                            <? endwhile; endif;
+                        wp_reset_query(); ?></p>
                 </div>
                 <div class="tab-pane fade func__descr" role="tabpanel" id="queue">
-                    <h3 class="func__descr-title">   Организация очередей</h3>
-                    <p>  Звонящий абонент может ожидать соединения в виртуальной очереди. Время ожидания и текстовые сообщения, звучащие во время ожидания, согласовываются заказчиком. Чаще всего эту функцию используют при работе Call-центров и компаний с большим ежедневным входящим траффиком звонков. Очередь звонков призвана удержать всех позвонивших в организацию клиентов, когда менеджеры заняты (ведут беседу с другим клиентом) или временно недоступны.</p>
+                    <h3 class="func__descr-title"><?php echo get_the_title($post = 16) ?></h3>
+
+                    <p><?php if (have_posts()) : query_posts('p=16');
+                            while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
+                            <? endwhile; endif;
+                        wp_reset_query(); ?></p>
                 </div>
                 <div class="tab-pane fade func__descr" role="tabpanel" id="return">
-                    <h3 class="func__descr-title">   Обратный звонок</h3>
-                    <p>  Во время исходящего звонка вашему клиенту у него определяется номер мобильного телефона? Клиент может позвонить на него в любое время и попадет на Вашу АТС - именно к тому оператору, который последним звонил ему. Таким образом мы реализовали уникальную связку Клиент-Менеджер: по исследованиям маркетологов, связываясь с персональным менеджером напрямую, клиент чувствует себя более особенным.</p>
+                    <h3 class="func__descr-title"><?php echo get_the_title($post = 23) ?></h3>
+
+                    <p><?php if (have_posts()) : query_posts('p=23');
+                            while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
+                            <? endwhile; endif;
+                        wp_reset_query(); ?></p>
                 </div>
                 <div class="tab-pane fade func__descr" role="tabpanel" id="fax">
-                    <h3 class="func__descr-title">   Факс &#8594; E-mail</h3>
-                    <p>  Вы сможете принимать адресованные в вашу компанию факсимильные сообщения прямо на e-mail уже в виде готового прикрепленного файла.</p>
+                    <h3 class="func__descr-title"><?php echo get_the_title($post = 19) ?></h3>
+
+                    <p><?php if (have_posts()) : query_posts('p=19');
+                            while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
+                            <? endwhile; endif;
+                        wp_reset_query(); ?></p>
                 </div>
                 <div class="tab-pane fade func__descr" role="tabpanel" id="crm">
-                    <h3 class="func__descr-title">   Интеграция с CRM</h3>
-                    <p>  Интеграция CRM-систем и телефонии не только "модная" тенденция, но и реально эффективное решение. Автоматическое открытие карточки клиента при звонке с выводом информации о нем снижает время обработки запроса, звонки одним кликом в считанные секунды соединят с клиентом, статистика вызовов и  записи разговоров прямо из CRM отобразят всю картину руководтству.На сегодня реализована возможность интеграции виртуальной АТС с CRM-системами 1С-Битрикс, Битрикс 24, AMO-CRM.</p>
+                    <h3 class="func__descr-title"><?php echo get_the_title($post = 21) ?></h3>
+
+                    <p><?php if (have_posts()) : query_posts('p=21');
+                            while (have_posts()) : the_post(); ?>
+                                <?php the_content(); ?>
+                            <? endwhile; endif;
+                        wp_reset_query(); ?></p>
                 </div>
             </div>
         </div>
