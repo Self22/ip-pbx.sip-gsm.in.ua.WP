@@ -213,29 +213,38 @@
             <div class="gsm__universal">
                 <h3 class="gsm__title"> <?php echo get_cat_name(7); ?></h3>
                 <div class="gsm__descr">
-                    <p><strong>Исходящие звонки.</strong><span>   В один канал ежемесячно включена 1 тыс. минут исходящих звонков на номера всех мобильных GSM-операторов Украины, по истечении лимита звонки тарифицируются по 30 коп\мин (с НДС). При исходящих звонках не используются фиксированные номера, и отображаемые номера на вызываемом телефоне будут разными. Для удобства реализован  "обратный перезвон", и обратный звонок на эти номера попадает прямо в канал, с которого изначально исходил звонок (неважно, через день или через год). Как показывает практика, этого вполне хватает для адекватной работы практически любой компании.</span></p>
-                    <p><strong> Входящие звонки.</strong><span>   По заказу к каналу подключаются существующие или новые многоканальные номера мобильных операторов Украины. Все входящие звонки бесплатные.</span></p>
-                    <p>  Стоимость канала –<strong class="superprice">   130 грн. в месяц**</strong><span>   (с НДС).</span></p>
-                    <p>  По умолчанию канал безномерной.</p>
-                    <p><em> *За каждый обратный звонок на канал «Универсальный» с номеров оператора Lifecell согласно правил оператора за каждый факт звонка снимается плата 0,22 грн.</em></p>
-                    <p><em> **Cтоимость действительна только при подключении через программный телефон Zoiper с предустановленными нами настройками. Для других подключений цена канала 260 грн. в мес. Подробнее о покупке каналов для собственных АТС и систем телефонии см. <a href="http://sip-gsm.in.ua"> наш сайт.</a></em></p>
+                    <?php if (have_posts()) : query_posts('p=28');
+                        while (have_posts()) : the_post(); ?>
+                            <?php the_content(); ?>
+                        <? endwhile; endif;
+                    wp_reset_query(); ?>
                 </div>
             </div>
             <div class="gsm__incoming">
                 <h3 class="gsm__title"> <?php echo get_cat_name(8); ?></h3>
                 <div class="gsm__descr">
-                    <p>  К каналу подключаются любые мобильные номера Украины – как давно существующие, так и новые. Каждый мобильный номер можно сделать многоканальным, т.е. подключить его к нескольким таким каналам (до 64-х и выше).</p>
-                    <p>  Может быть подключён один запоминающийся входящий номер на всех операторов (который мы подбираем по заказу), например:</p><strong class="gsm_3"> (050)</strong><br><strong class="gsm_3"> (067) 461-77-55</strong><br><strong class="gsm_3"> (093)</strong><br>
-                    <p>  Стоимость одного канала -<strong class="superprice"> 80 грн. в мес.</strong><span>   (с НДС). Канал по умолчанию безномерной.</span></p>
+                    <?php if (have_posts()) : query_posts('p=30');
+                        while (have_posts()) : the_post(); ?>
+                            <?php the_content(); ?>
+                        <? endwhile; endif;
+                    wp_reset_query(); ?>
                 </div>
             </div>
             <div class="gsm__numbers">
                 <h3 class="gsm__title">  <?php echo get_cat_name(9); ?></h3>
                 <p>  Если Вам нужен фиксированный мобильный номер для получения многоканальных входящих звонков на каналы IP-телефонии, Вы можете подключить к ним номера украинских операторов. Расценки на обслуживание номеров:</p>
                 <div class="numbers_container">
-                    <p class="descr__oper"><img class="logo_oper" src="<?php echo get_template_directory_uri(); ?>/img/kyivstar.png" alt="виртуальная атс евро-тел"><strong> Киевстар - 50 грн. в мес.</strong></p>
-                    <p class="descr__oper"><img class="logo_oper" src="<?php echo get_template_directory_uri(); ?>/img/vodafone.png" alt="виртуальная атс евро-тел"><strong> Vodafone - 50 грн. в мес.</strong></p>
-                    <p class="descr__oper"><img class="logo_oper" src="<?php echo get_template_directory_uri(); ?>/img/lifecell.png" alt="виртуальная атс евро-тел"><strong> Lifecell - 50 грн. в мес.*</strong></p>
+
+                    <?php if (have_posts()) : query_posts('cat=' . '4');
+                        while (have_posts()) : the_post(); ?>
+                            <div class="descr__oper">
+                                <?php the_post_thumbnail(array(50, 50)); ?>
+                                <strong><?php the_content(); ?></strong>
+                            </div>
+                        <? endwhile; endif;
+                    wp_reset_query(); ?>
+
+
                 </div>
                 <p><em> * Особенность номеров Lifecell: по условиям оператора стоимость каждого факта входящего звонка в каналах IP-телефонии составляет 22 коп. Оплата за звонки текущего месяца учитывается в счёте следующего месяца.</em></p>
             </div>
